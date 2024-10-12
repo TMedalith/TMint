@@ -1,0 +1,91 @@
+---
+// Navbar.astro
+---
+<nav class="navbar">
+    <ul class="nav-links">
+        <li class="active">
+            <a href="#home"><span> Home</span></a>
+        </li>
+        <li>
+            <a href="#about"><span> About</span></a>
+        </li>
+        <li>
+            <a href="#skills"><span> Skills</span></a>
+        </li>
+        <li>
+            <a href="#projects"><span> Projects</span></a>
+        </li>
+        <li>
+            <a href="#contact"><span> Contact</span></a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    /* Sidebar / Navbar */
+.navbar {
+  position: fixed;
+  width: 200px;
+  height: inherit;
+
+  background-color: var(--background-dark);
+  padding: 40px 20px;
+  transition: left 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  align-items: start;
+
+}
+
+.nav-links li {
+  color: #c4c4c4;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.nav-links li.active {
+  color: #fff;
+  opacity: 1;
+  font-weight: 600;
+}
+
+.nav-links li.active i {
+  color: #f1aaa7;
+}
+
+.nav-links li i {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    width: 80px;
+    right: -200px;
+    border-radius: 50px 0px 0px 50px;
+    transition: right 0.3s ease;
+  }
+
+  .navbar.open {
+    right: 0;
+  }
+
+  .nav-links li {
+    writing-mode: vertical-lr;
+    text-align: center;
+  }
+}
+
+</style>
