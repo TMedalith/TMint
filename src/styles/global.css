@@ -1,6 +1,7 @@
+
 /* Variables de color para Dark Mode & Light Mode */
 :root {
-    --bg-color-dark: #1c1c1c;
+    --bg-color-dark: #000000;
     --text-color-dark: #ffffff;
     --sidebar-bg-dark: #2c2c2c;
     --border-color-dark: #4a4a4a;
@@ -27,6 +28,7 @@
     justify-content: end;
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
   }
   
   body.light-mode {
@@ -51,14 +53,14 @@
   /* Layout general para la página */
 .layout {
     display: grid;
+    margin-top: 72px;
     grid-template-columns: 200px 1fr; /* Sidebar y contenido principal */
     width: 100%;
-    height: calc(100vh - 72px); /* Para dar espacio al header fijo */
+    min-height: calc(100vh - 72px); /* Para dar espacio al header fijo */
   }
   
   /* Estilos para el contenido principal */
   .main-content {
-    padding: 40px;
     grid-column: 2; /* Asegura que ocupe la segunda columna de la grid */
   }
   
@@ -67,9 +69,35 @@
     .layout {
       grid-template-columns: 1fr; /* Elimina la barra lateral en pantallas pequeñas */
     }
-  
-    .main-content {
-      padding: 20px;
-    }
   }
-  
+/* Estilo general para los círculos difuminados */
+.blur-circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(167, 92, 239, 0.3) 0%, rgba(167, 92, 239, 0.1) 60%, rgba(167, 92, 239, 0) 100%);
+  filter: blur(100px); /* Aumentamos el blur para un efecto más suave */
+  border-radius: 50%; /* Mantener la forma circular */
+  opacity: 1;
+}
+
+/* Círculo 1 con su propio color */
+.circle1 {
+  top: 10%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(167, 92, 239, 0.3) 0%, rgba(167, 92, 239, 0.1) 60%, rgba(167, 92, 239, 0) 100%);
+}
+
+/* Círculo 2 con su propio color */
+.circle2 {
+  top: 20%;
+  left: 60%;
+  background: radial-gradient(circle, rgba(239, 82, 145, 0.3) 0%, rgba(239, 82, 145, 0.1) 60%, rgba(239, 82, 145, 0) 100%);
+}
+
+/* Círculo 3 con su propio color */
+.circle3 {
+  top: 65%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(82, 145, 239, 0.3) 0%, rgba(82, 145, 239, 0.1) 60%, rgba(82, 145, 239, 0) 100%);
+}

@@ -1,9 +1,10 @@
 ---
 // MainLayout.astro
-import Header from '../components/Header.astro';
-import Navbar from '../components/Navbar.astro'; // Aquí importamos correctamente Navbar
+import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro"; // Aquí importamos correctamente Navbar
 const { Content } = Astro.props;
 ---
+
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -12,7 +13,10 @@ const { Content } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="stylesheet"
@@ -23,13 +27,19 @@ const { Content } = Astro.props;
   </head>
   <body class="dark-mode">
     <Header />
-    
+
     <div class="layout">
-      <Navbar /> <!-- Aquí corregimos el uso de Navbar -->
+      <Navbar />
+      <!-- Aquí corregimos el uso de Navbar -->
       <main class="main-content">
-        <slot /> <!-- Aquí se mostrará el contenido dinámico -->
+        <slot />
+        <!-- Aquí se mostrará el contenido dinámico -->
       </main>
     </div>
+    <div class="blur-circle circle1"></div>
+    <div class="blur-circle circle2"></div>
+    <div class="blur-circle circle3"></div>
+
     <script src="/src/scripts/themeToggle.js"></script>
     <script src="/src/scripts/navbarToggle.js"></script>
   </body>

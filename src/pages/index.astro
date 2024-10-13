@@ -6,5 +6,35 @@ import Tags from '../components/Tags.astro';
 ---
 <MainLayout>
   <Hero />
-  <Tags />
+  <section id="about" class="about-section">
+    <h2>About Me</h2>
+    <p>
+      I'm Tatiana M., a passionate web developer with experience in building
+      high-quality websites and applications. I specialize in front-end
+      development using modern technologies like HTML, CSS, JavaScript, and
+      frameworks like React and Vue.js. My goal is to create responsive,
+      user-friendly interfaces that deliver a great user experience.
+    </p>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Project 1: Portfolio Website</h3>
+      <p>
+        A personal portfolio website built using Astro and CSS Grid to showcase
+        my web development projects and blog posts.
+      </p>
+    </div>
+    <div class="project">
+      <h3>Project 2: E-commerce Store</h3>
+      <p>
+        An e-commerce platform built with React and Node.js, featuring dynamic
+        product pages, shopping cart functionality, and Stripe integration for
+        payments.
+      </p>
+    </div>
+  </section>
+
+
 </MainLayout>
