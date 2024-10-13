@@ -1,0 +1,64 @@
+---
+// Hero.astro
+---
+<section id="home" class="hero">
+    <div>
+        <h1 class="hero-title">Tatiana M.</h1>
+        <p class="hero-description">
+            Passionate about full stack and Mobile development. Always eager to learn and apply new technologies to solve real-world problems.
+        </p>
+        <button class="view-projects">View my Projects</button>
+    </div>
+    <div class="hero-animation">
+        <img src="../../public/slay-hero.png" alt="person animation" />
+    </div>
+</section>
+
+<style>
+    /* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  min-height: 100vh;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f1aaa7;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #c4c4c4;
+}
+
+.view-projects {
+  padding: 12px 30px;
+  background-color: #f1aaa7;
+  color: white;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.view-projects:hover {
+  background-color: #e5857c;
+}
+
+.hero-animation img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>

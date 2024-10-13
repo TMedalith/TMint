@@ -1,0 +1,35 @@
+---
+// Tags.astro
+---
+<div class="tags">
+    <span>Cybersecurity Enthusiast</span>
+    <span>IA explorer</span>
+</div>
+
+<style>
+    /* Tags */
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color-dark);
+  border-bottom: 1px solid var(--border-color-dark);
+}
+
+.tags span {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #f1aaa7;
+}
+
+.tags span:before,
+.tags span:after {
+  content: "✶";
+  font-size: 1.5rem;
+  color: #f1aaa7;
+  margin: 0 10px;
+}
+
+</style>
