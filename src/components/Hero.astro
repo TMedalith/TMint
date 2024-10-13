@@ -1,64 +1,136 @@
 ---
-// Hero.astro
+// Importar componentes o datos si es necesario
+import Tags from "./Tags.astro";
 ---
+
 <section id="home" class="hero">
-    <div>
-        <h1 class="hero-title">Tatiana M.</h1>
-        <p class="hero-description">
-            Passionate about full stack and Mobile development. Always eager to learn and apply new technologies to solve real-world problems.
-        </p>
-        <button class="view-projects">View my Projects</button>
-    </div>
+  <div class="hero-content">
+    <!-- Hero Image / Animation -->
     <div class="hero-animation">
-        <img src="../../public/slay-hero.png" alt="person animation" />
+      <img src="../../public/slay-hero.png" alt="person animation" />
     </div>
+
+    <!-- Hero Text Content -->
+    <div class="hero-text">
+      <h1 class="hero-title">Tatiana</h1>
+      <p class="hero-description">
+        Passionate about full stack and Mobile development. Always eager to learn and apply new technologies to solve real-world problems.
+      </p>
+      <button class="view-projects">
+        View my Projects
+        <span class="arrow">→</span>
+      </button>
+    </div>
+  </div>
 </section>
 
 <style>
-    /* Hero Section */
+/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  height: calc(100vh - 72px);
+  padding: 0 40px;
+  gap: 40px;
+  color: #ffffff;
+}
+
+/* Content Layout */
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+
+.hero-animation {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-animation img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.25));
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   gap: 20px;
-  min-height: 100vh;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #f1aaa7;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 800;
+  color: #f8f9fa;
+  letter-spacing: 1px;
 }
 
 .hero-description {
   font-size: 1.25rem;
   line-height: 1.75rem;
-  color: #c4c4c4;
+  color: #e0e0e0;
+  max-width: 500px;
+  text-align: justify;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos del botón */
 .view-projects {
-  padding: 12px 30px;
-  background-color: #f1aaa7;
-  color: white;
-  border-radius: 30px;
+  cursor: pointer;
+  padding: 10px 25px; /* Padding ajustado */
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 10px;
   font-size: 1rem;
-  transition: background-color 0.3s;
   font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Efecto de glassmorphism */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s;
+  display: inline-flex; /* Solo ocupa el espacio necesario */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* No permitir el salto de línea */
+  width: auto; /* Ajusta el tamaño estrictamente al contenido */
 }
 
 .view-projects:hover {
-  background-color: #e5857c;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px); /* Efecto hover */
 }
 
-.hero-animation img {
-  max-width: 100%;
-  height: auto;
+.arrow {
+  margin-left: 10px; /* Espacio entre texto y flecha */
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
+.view-projects:hover .arrow {
+  transform: translateX(5px); /* Movimiento de flecha en hover */
+}
+
+/* Efecto flotante */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 </style>
