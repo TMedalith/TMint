@@ -1,7 +1,7 @@
 ---
 // MainLayout.astro
 import Header from "../components/Header.astro";
-import Navbar from "../components/Navbar.astro"; // Aquí importamos correctamente Navbar
+import Navbar from "../components/Navbar.astro"; 
 const { Content } = Astro.props;
 ---
 
@@ -34,6 +34,7 @@ const { Content } = Astro.props;
       <main class="main-content">
         <slot />
         <!-- Aquí se mostrará el contenido dinámico -->
+        <div class="blur-overlay"></div>
       </main>
     </div>
     <div class="blur-circle circle1"></div>

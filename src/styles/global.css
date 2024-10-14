@@ -1,16 +1,19 @@
 
 /* Variables de color para Dark Mode & Light Mode */
 :root {
-    --bg-color-dark: #000000;
-    --text-color-dark: #ffffff;
-    --sidebar-bg-dark: #2c2c2c;
-    --border-color-dark: #4a4a4a;
-  
-    --bg-color-light: #ffffff;
-    --text-color-light: #000000;
-    --sidebar-bg-light: #f2f2f2;
-    --border-color-light: #f2f2f2;
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --sidebar-bg: #2c2c2c;
+    --border-color: #4a4a4a;
   }
+
+  body.light-mode {
+    --bg-color: #ffffff;         /* Color de fondo en modo claro */
+    --text-color: #000000;       /* Color de texto en modo claro */
+    --sidebar-bg: #f2f2f2;       /* Fondo del sidebar en modo claro */
+    --border-color: #f2f2f2;     /* Color de borde en modo claro */
+}
+
   
   /* General Styles */
   * {
@@ -21,8 +24,8 @@
   
   body {
     font-family: 'Nunito', sans-serif;
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: end;
