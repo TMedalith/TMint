@@ -27,7 +27,6 @@
   height: calc(100vh - 72px);
   z-index: 1000;
   backdrop-filter: blur(10px);
-  background-color: var(--background-dark);
   padding-left: 20px;
   transition: left 0.3s ease;
   display: flex;
@@ -52,11 +51,6 @@
   z-index: 1000;
 }
 
-
-.nav-links a{
-  width: 100px;
-}
-
 .nav-links li.active {
   color: #ffffff;
   opacity: 1;
@@ -64,57 +58,116 @@
   transition: padding-left 0.3s ease;
 }
 
-/* Adjust line width to stop before the star */
 .nav-links li.active::before {
   content: "";
   position: absolute;
-  left: 0; /* Start the line from the left edge */
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   height: 2px;
   z-index: 0;
   background: linear-gradient(45deg, #007bff, #e35cbb);
   transition: width 0.5s ease-in-out;
-  width: calc(100% - 90px); /* Total width minus star size and margin-right */
-}
-
-/* Star styling */
-.nav-links a:before {
-  content: "✶";
-  font-size: 1.5rem; /* Size of the star */
-  color: #ea8e8b;
-  margin-right: 10px; /* Margin between the star and text */
-  z-index: 1;
-  position: relative;
-  display: inline-block;
+  width: calc(100% - 90px); 
 }
 
 .nav-links a {
   z-index: 1;
   display: inline-block;
+  width: 100PX;
   position: relative;
+}
+
+.nav-links a:before {
+  content: "✶";
+  font-size: 1.5rem;
+  color: #ea8e8b;
+  margin-right: 10px;
+  z-index: 1;
+  position: relative;
+  display: inline-block;
 }
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
   .navbar {
-    width: 80px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    width: 70px;
     right: -200px;
     transition: right 0.3s ease;
   }
 
   .navbar.open {
-    right: 0;
+    right: 0px;
   }
 
+
+  .nav-links{
+    height: inherit;
+    
+    gap: 0;
+
+    width: 70px;
+  }
   .nav-links li {
+    width: 70px;
+    border-left: 1px solid white;
     writing-mode: vertical-lr;
     text-align: center;
+    color: #fff;
+    opacity: 1;
+    position: relative; 
+    margin: 0;
+    padding: 0;
+    
+    padding: 17px 0 ;
+    width: 100%;
+  }
+
+  .nav-links a {
+    margin: 0;
+    width: auto;
+    height: 90px;
+    padding: 0;
+  }
+
+  .nav-links li.active {
+    padding-left: 0px;
+    border-left: transparent;
+    color: #ea8e8b;
+    position: relative; 
   }
 
   .nav-links li.active::before {
-    left: -10px;
-    width: calc(100% + 10px);
-  }
+    content: '';
+    position: absolute;
+    left: -117px; /* Ajusta según necesites */
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    width: 146px;
+    height: 90px;
+    background-image: url('/public/tumor.svg');
+    clip-path: var('/public/tumor.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+  backdrop-filter: blur(10px);
+    z-index: 1005;
+    /* No es necesario backdrop-filter */
 }
+
+
+  .navbar::before {
+    background: none;
+  }
+  
+
+  .nav-links a:before {
+    font-size: 1.2rem;
+  }
+
 </style>
